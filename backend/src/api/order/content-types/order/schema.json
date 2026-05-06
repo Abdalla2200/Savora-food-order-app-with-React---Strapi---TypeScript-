@@ -1,0 +1,51 @@
+{
+  "kind": "collectionType",
+  "collectionName": "orders",
+  "info": {
+    "singularName": "order",
+    "pluralName": "orders",
+    "displayName": "order"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "items": {
+      "type": "json"
+    },
+    "subTotal": {
+      "type": "decimal"
+    },
+    "total": {
+      "type": "decimal"
+    },
+    "tax": {
+      "type": "decimal"
+    },
+    "paymentMethod": {
+      "type": "enumeration",
+      "enum": [
+        "cash",
+        "card"
+      ]
+    },
+    "orderStatus": {
+      "type": "enumeration",
+      "enum": [
+        "pending",
+        "confirmed",
+        "delivered"
+      ]
+    },
+    "address": {
+      "type": "string"
+    }
+  }
+}
