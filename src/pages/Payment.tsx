@@ -6,6 +6,7 @@ import { useCartStore } from "../store/cartStore";
 import SectionHeading from "../components/UI/SectionHeading";
 import { useCheckoutStore } from "../store/checkoutStore";
 import { submitOrder } from "../api/api";
+import { useTokenStore } from "../store/tokenStore";
 
 export default function Payment() {
   const navigate = useNavigate();
@@ -21,7 +22,7 @@ export default function Payment() {
   const tax = Number((subTotal * 0.14).toFixed(2));
   const total = Number((subTotal + tax + deliveryFee).toFixed(2));
 
-  const token = localStorage.getItem("token");
+  const token = useTokenStore((state) => state.token);
 
   const payload = {
     name: checkoutData?.name,
